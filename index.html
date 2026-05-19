@@ -299,11 +299,11 @@ main {
 
 .stage {
     display: none;
-    animation: fadeIn 0.5s ease;
+    animation: fadeIn 0.15s ease;
 }
 .stage.active { display: block; }
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(12px); }
+    from { opacity: 0; transform: translateY(6px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -1466,9 +1466,7 @@ ul li::marker { color: var(--gold); }
         <span class="eyebrow">חלק 3 · לפני שמתחילים</span>
         <h2>הסבר קצר על המחקר</h2>
 
-        <p>במחקר זה תתבקש/י לעבור מספר שלבים קצרים: <strong>קבלת מטבעות וירטואליים</strong>, מענה על מספר שאלות, ולבסוף <strong>סדרה של עשר החלטות</strong> שבהן תוכל/י לבחור בין אפשרות בטוחה לבין הימור.</p>
-
-        <p>המטבעות הם וירטואליים בלבד ומשמשים לצרכי המחקר – הם לא ניתנים להמרה לכסף אמיתי.</p>
+        <p>המחקר עוסק בקבלת החלטות ובאופן שבו אנשים בוחרים במצבים שונים.</p>
 
         <div class="hint-box">
             <strong>חשוב לדעת:</strong> אין תשובות "נכונות" או "לא נכונות" – מעניינת אותנו הדרך שבה אנשים שונים מקבלים החלטות. אנא ענה/י בכנות לפי איך שאת/ה באמת מרגיש/ה.
@@ -1617,6 +1615,7 @@ ul li::marker { color: var(--gold); }
                 <div class="award-title" id="award-banner-title">קיבלת תגמול</div>
                 <div class="award-amount" style="font-size:42px;">400 מטבעות</div>
                 <div class="award-desc" id="award-banner-desc">סה"כ ברשותך כעת: 400 מטבעות וירטואליים</div>
+                <div id="award-emphasis" style="margin-top:18px; font-family:'Suez One', serif; font-size:22px; color:var(--gold-light); line-height:1.5; display:none;"></div>
             </div>
         </div>
         <div class="actions center">
@@ -1661,9 +1660,9 @@ ul li::marker { color: var(--gold); }
         <div class="award" style="justify-content:center; flex-direction:column; text-align:center; padding:34px 24px; margin: 30px 0;">
             <div class="award-icon" style="width:80px; height:80px; font-size:40px; background:linear-gradient(135deg,var(--green),var(--green-deep)); box-shadow:0 4px 24px rgba(52,201,122,0.4); color:white;">↑</div>
             <div>
-                <div class="award-title" style="color:var(--green);">דמיין כי הרווחת</div>
-                <div class="award-amount" style="font-size:50px; color:var(--green);">+50 מטבעות</div>
-                <div class="award-desc">כעת יש לך 50 מטבעות יותר מהמצב ההתחלתי. כלומר את/ה "מעל".</div>
+                <div class="award-title" style="color:var(--green); font-size:32px; font-weight:700; letter-spacing:0; text-transform:none; font-family:'Suez One',serif;">דמיין כי הרווחת</div>
+                <div class="award-amount" style="font-size:54px; color:var(--green);">+50 מטבעות</div>
+                <div class="award-desc" style="font-size:18px; margin-top:10px;">כעת יש לך 50 מטבעות יותר מהמצב ההתחלתי. כלומר את/ה "מעל".</div>
             </div>
         </div>
 
@@ -1691,9 +1690,9 @@ ul li::marker { color: var(--gold); }
         <div class="award" style="justify-content:center; flex-direction:column; text-align:center; padding:34px 24px; margin: 30px 0; background:linear-gradient(135deg,rgba(225,85,85,0.15),rgba(138,29,29,0.10)); border-color:rgba(225,85,85,0.4); box-shadow:0 8px 30px rgba(225,85,85,0.18);">
             <div class="award-icon" style="width:80px; height:80px; font-size:40px; background:linear-gradient(135deg,var(--red),var(--red-deep)); box-shadow:0 4px 24px rgba(225,85,85,0.4); color:white;">↓</div>
             <div>
-                <div class="award-title" style="color:var(--red);">דמיין כי הפסדת</div>
-                <div class="award-amount" style="font-size:50px; color:var(--red);">−50 מטבעות</div>
-                <div class="award-desc">כעת את/ה ב"גירעון" – חסרים לך 50 מטבעות כדי להיות במצב ההתחלתי.</div>
+                <div class="award-title" style="color:var(--red); font-size:32px; font-weight:700; letter-spacing:0; text-transform:none; font-family:'Suez One',serif;">דמיין כי הפסדת</div>
+                <div class="award-amount" style="font-size:54px; color:var(--red);">−50 מטבעות</div>
+                <div class="award-desc" style="font-size:18px; margin-top:10px;">כעת את/ה ב"גירעון" – חסרים לך 50 מטבעות כדי להיות במצב ההתחלתי.</div>
             </div>
         </div>
 
@@ -1749,7 +1748,7 @@ ul li::marker { color: var(--gold); }
                         <polyline points="9 12 11 14 15 10"></polyline>
                     </svg>
                 </div>
-                <div class="opt-tag">אפשרות א' · בטוח</div>
+                <div class="opt-tag">אפשרות א'</div>
                 <div class="opt-label" id="opt-safe-label"></div>
             </div>
             <div class="decision-option risky" id="opt-risky" onclick="selectOption('risky')">
@@ -1761,7 +1760,7 @@ ul li::marker { color: var(--gold); }
                         <path d="M8 11 v6 M16 11 v6 M12 5 v6"></path>
                     </svg>
                 </div>
-                <div class="opt-tag">אפשרות ב' · הימור</div>
+                <div class="opt-tag">אפשרות ב'</div>
                 <div class="opt-label" id="opt-risky-label"></div>
             </div>
         </div>
@@ -2473,7 +2472,12 @@ function submitWindfall() {
     state.wallet = state.initialCoins;
     document.getElementById('award-banner-title').textContent = 'בונוס אקראי';
     document.getElementById('award-banner-desc').textContent  =
-        'קיבלת 400 מטבעות ניסוי כבונוס אקראי! הקצאה זו אינה תלויה במאמץ או בביצועים. סה"כ ברשותך כעת: 400 מטבעות וירטואליים.';
+        'סה"כ ברשותך כעת: 400 מטבעות וירטואליים.';
+    const emphEl = document.getElementById('award-emphasis');
+    if (emphEl) {
+        emphEl.innerHTML = 'קיבלת 400 מטבעות <strong>באופן אקראי לחלוטין</strong>.<br>הקצאה זו <u style="text-decoration-thickness:2px; text-underline-offset:4px;">אינה תלויה במאמץ או בביצועים שלך</u>.';
+        emphEl.style.display = 'block';
+    }
     showWallet('400 מטבעות (בונוס)');
     updateWalletDisplay(state.wallet);
     goTo('stage-award');
